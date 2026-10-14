@@ -1,0 +1,12 @@
+numpy
+scipy
+pandas
+openpyxl
+tabulate
+matplotlib
+scikit-learn
+librosa>=0.10
+soundfile
+# For WavLM / UniSpeech-SAT extraction (milestones 3-4)
+torch
+transformers>=4.35
