@@ -1,6 +1,6 @@
 # Acoustic and Self-Supervised Representations of Ambiguous Emotional Speech
 
-**ELEC5305 Acoustics, Speech and Signal Processing, Semester 2 2026, Saifullah Tawsif (SID 530820172)**
+**ELEC5305 Acoustics, Speech and Signal Processing, Semester 2 2026**
 
 > **Status: Project Feedback Two, early work in progress.** The project has been redesigned around the Feedback One comments, and initial pipeline code is in place. Results are pending.
 > All current code and documentation live in [`elec5305-emotion-ambiguity/`](elec5305-emotion-ambiguity/).
