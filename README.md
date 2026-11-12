@@ -4,7 +4,7 @@ ELEC5305 Acoustics, Speech and Signal Processing, University of Sydney, Semester
 Saifullah Tawsif (SID 530820172)
 
 - Report: [report/ELEC5305_Report_530820172.pdf](report/ELEC5305_Report_530820172.pdf)
-- Video: VIDEO_LINK_HERE
+- Video: [Project video (Google Drive)](https://drive.google.com/file/d/1kFRbgu61ARlcvqPdfcNoPMfjc3iEq7Ua/view?usp=sharing)
 - Project page: https://tawsifsaifullah.github.io/elec5305-project-530820172
 
 ## Research question
@@ -35,13 +35,11 @@ matlab/
   extract_acoustic_features_live.m   Live Script version of the same extraction
   plot_case_studies.m                waveform / spectrogram / F0 / intensity case studies
 python/
-  ravdess_meta.py                    file metadata + listener ratings -> results/metadata.csv
-  make_folds.py                      leave-one-actor-out folds -> results/folds.csv
-  extract_ssl.py                     frozen WavLM / UniSpeech-SAT layer embeddings (.npy)
-  run_classifiers.py                 linear probe on all 27 systems
-  analysis.ipynb                     layer, alignment, confusion, intensity analysis + figures
-  Extract_SSL_features_from_pre_trained_models.ipynb   notebook version of extract_ssl.py
-  Running_classifier_on_featuers.ipynb                 notebook version of run_classifiers.py
+  ravdess_meta.py                    builds results/metadata.csv (clip labels + listener agreement)
+  make_folds.py                      builds results/folds.csv (leave-one-actor-out, 24 folds)
+  Extract_SSL_features_from_pre_trained_models.ipynb   frozen WavLM / UniSpeech-SAT features, 13 layers, mean-pooled
+  Running_classifier_on_featuers.ipynb                 logistic regression probe for all 27 systems, leave-one-actor-out
+  analysis.ipynb                     all figures, tables and statistics
 results/                       CSV outputs and tables
 results/figures/               all report figures
 report/                        final report PDF
@@ -59,13 +57,13 @@ requirements.txt               Python packages
 ## How to run (in order, from the repository root unless stated)
 1. `python python/ravdess_meta.py` → `results/metadata.csv`
 2. `python python/make_folds.py` → `results/folds.csv`
-3. `python python/extract_ssl.py` → `results/wavlm_layers.npy`, `results/unispeechsat_layers.npy` (uses the GPU if available; set `TEST_N = None` at the top of the script for the full run). These arrays are about 57 MB each and are not stored in the repo.
+3. Open `python/Extract_SSL_features_from_pre_trained_models.ipynb` and Run All → `results/wavlm_layers.npy`, `results/unispeechsat_layers.npy` (about 10–30 min on CPU; a model is skipped if its `.npy` file already exists). These `.npy` files are not in the repo because of their size.
 4. MATLAB (current folder = repository root): `run('matlab/extract_acoustic_features.m')` → `results/acoustic_features.csv`
-5. `python python/run_classifiers.py` → `results/predictions.csv`, `results/classifier_summary.csv`
+5. Open `python/Running_classifier_on_featuers.ipynb` and Run All → `results/predictions.csv`, `results/classifier_summary.csv`.
 6. Open `python/analysis.ipynb` and Run All. The notebook runs from the `python/` folder (its paths use `../results/`). It writes the figures and tables to `results/figures/` (e.g. `fig1a_layer_f1_ci.png`, `fig2_layer_alignment.png`, `fig3_confidence_by_agreement.png`, `quadrants.png`, `fig4a_confusions.png`, `fig5_intensity.png`, `table1_paired_layers.png`) and the analysis tables to `results/` (e.g. `alignment_by_layer.csv`, `intensity_effect.csv`, `table1_paired_layers.csv`, `cases_easy_wrong.csv`).
 7. MATLAB (current folder = repository root): `run('matlab/plot_case_studies.m')` → `results/figures/fig6_case_studies.png`
 
-The notebooks `Extract_SSL_features_from_pre_trained_models.ipynb` and `Running_classifier_on_featuers.ipynb` are step-by-step notebook versions of steps 3 and 5. They use paths relative to the repository root (`results/...`), while Jupyter starts a notebook's kernel in `python/`, so run `import os; os.chdir("..")` in the first cell before running them.
+For the extraction and classifier notebooks, run `import os; os.chdir('..')` in the first cell (or start Jupyter from the repository root). `analysis.ipynb` runs from `python/` as it is.
 
 ## AI acknowledgement
 Claude (Anthropic) was used to help debug and refine code, explain literature and statistical results, and improve the structure and wording of the report. All experiments were run by the author and all results were checked against the code outputs.
