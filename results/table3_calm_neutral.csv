@@ -1,0 +1,4 @@
+System,ρ (all clips),ρ (without calm/neutral)
+Acoustic,0.324,0.388
+WavLM L6,0.428,0.515
+UniSpeech-SAT L7,0.419,0.529

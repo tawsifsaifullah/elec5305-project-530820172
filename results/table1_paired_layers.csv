@@ -1,0 +1,7 @@
+Comparison,Mean ΔF1,Actors better,Wilcoxon p
+WavLM L5 vs WavLM L12,+0.130,22/24,< 0.001
+WavLM L5 vs WavLM L0,+0.240,24/24,< 0.001
+UniSpeech-SAT L6 vs UniSpeech-SAT L12,+0.106,21/24,< 0.001
+UniSpeech-SAT L6 vs UniSpeech-SAT L0,+0.218,24/24,< 0.001
+WavLM L5 vs UniSpeech-SAT L6,+0.010,16/24,0.491
+WavLM L5 vs Acoustic,+0.307,24/24,< 0.001
