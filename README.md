@@ -3,8 +3,8 @@
 ELEC5305 Acoustics, Speech and Signal Processing, University of Sydney, Semester 2 2026
 Saifullah Tawsif (SID 530820172)
 
-- Report: [report/ELEC5305_Report_530820172.pdf](report/ELEC5305_Report_530820172.pdf)
-- Video: [Project video (Google Drive)](https://drive.google.com/file/d/1kFRbgu61ARlcvqPdfcNoPMfjc3iEq7Ua/view?usp=sharing)
+- Report: [report/ELEC5305_Big_project_report_v3.pdf](report/ELEC5305_Big_project_report_v3.pdf)
+- Video: [Project video (Google Drive)](https://drive.google.com/file/d/1Uw7XUBw_BcvM9Q58gdmiTWwbhjh9nHmF/view?usp=sharing)
 - Project page: https://tawsifsaifullah.github.io/elec5305-project-530820172
 
 ## Research question
